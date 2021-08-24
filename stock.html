@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock</title>
+</head>
+
+<body>
+    <style>
+        .maForm>button {
+            background-color: green;
+        }
+    </style>
+    <form class="maForm">
+        <input type="button" id="buttonEcriture" value="Ecriture dans localStorage" onclick="ecritureLocalStorage();"><br />
+        <input type="button" id="buttonLecture" value="Lecture dans localStorage" onclick="lectureLocalStorage();"><br />
+        <input type="button" id="buttonSuppression" value="Suppression dans localStorage" onclick="suppressionLocalStorage();"> <br />
+    </form>
+    <br />
+    <span id="intitule"></span> <br />
+    <span id="nomFamille"></span> <br />
+    <span id="prenom"></span> <br />
+    <span id="mail"></span>
+    <script type="text/javascript">
+        var intitule;
+        var nomFamille;
+        var prenom;
+        var mail;
+
+        function ecritureLocalStorage() {
+            if (typeof localStorage != "undefined") {
+                nomFamille = "ANTON MARTIN DE PORRES";
+                localStorage.setItem("nomFamille", nomFamille)
+                prenom = "Jerome";
+                localStorage.setItem("prenom", prenom);
+                mail = "deporresjerome@yahoo.com";
+                localStorage.setItem("mail", mail);
+                intitule = "Contenue do local Storage";
+                document.getElementById("intitule").innerHTML = "Ecriture des données";
+                document.getElementById("nomFamille").innerHTML = nomFamille;
+                document.getElementById("prenom").innerHTML = prenom;
+                document.getElementById("mail").innerHTML = mail;
+
+            } else {
+
+            }
+        }
+
+        function lectureLocalStorage() {
+            if (typeof localStorage != "undefined") {
+                nomFamille = localStorage.getItem("nomFamille");
+                prenom = localStorage.getItem("prenom");
+                mail = localStorage.getItem("mail");
+                intitule = "Contenue do local Storage";
+                document.getElementById("intitule").innerHTML = "Lecture des données";
+                document.getElementById("nomFamille").innerHTML = nomFamille;
+                document.getElementById("prenom").innerHTML = prenom;
+                document.getElementById("mail").innerHTML = mail;
+
+            } else {
+
+            }
+        }
+
+        function suppressionLocalStorage() {
+            if (typeof localStorage != "undefined") {
+                localStorage.removeItem("nomFamille");
+                localStorage.removeItem("prenom");
+                localStorage.removeItem("mail");
+                intitule = "Contenue do local Storage";
+                document.getElementById("intitule").innerHTML = "Les variables local storage sont supprimés";
+                document.getElementById("nomFamille").innerHTML = "";
+                document.getElementById("prenom").innerHTML = "";
+                document.getElementById("mail").innerHTML = "";
+            } else {
+
+            }
+        }
+    </script>
+</body>
+
+</html>

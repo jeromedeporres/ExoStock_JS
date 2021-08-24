@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockage des données</title>
+    <script type="text/javascript" src="stock1.js"></script>
+</head>
+<style>
+    .form1 {
+        color: green;
+        font-size: 20px;
+        display: block;
+        text-align: center;
+    }
+    
+    .form2 {
+        text-align: center;
+        padding: 3%;
+    }
+    
+    .form2>input {
+        padding: 1%;
+        display: table;
+        vertical-align: middle;
+    }
+</style>
+
+<body>
+    <h1>Stockage des données- JSON</h1>
+
+    <div class="form1">
+        <form class="maForm">
+            <label type="text">Nom :</label>
+            <input type="text" name="nom" id="fName">
+            <label type="text">Prénom :</label>
+            <input type="text" name="prenom" id="lName">
+            <label type="text">Mail :</label>
+            <input type="text" name="mail" id="eMail">
+        </form>
+    </div>
+    <div>
+        <form class="form2">
+            <input type="button" id="buttonEcriture" value="Ecriture dans localStorage" onclick="ecritureLocalStorage();"><br />
+            <input type="button" id="buttonLecture" value="Lecture dans localStorage" onclick="lectureLocalStorage();"><br />
+            <input type="button" id="buttonSuppression" value="Suppression dans localStorage" onclick="suppressionLocalStorage();"> <br />
+        </form>
+    </div>
+    <span id="intitule"></span> <br />
+    <span id="nomFamille"></span> <br />
+    <span id="prenom"></span> <br />
+    <span id="mail"></span>
+
+</body>
+
+</html>
